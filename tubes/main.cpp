@@ -21,11 +21,10 @@ float angles = 0.0f;
 float deltaAngle = 0.0f;
 float deltaMove = 0;
 int xOrigin = -1;
-//float x=0.0f, z=15.0f;
 float x=0.0f, z=15.0f;
 float lx=0.0f,lz=-1.0f;
 float home=15.0f,end=15.0f;
-//float home=85.0f,end=15.0f;
+
 using namespace std;
 
 float lastx, lasty;
@@ -44,6 +43,9 @@ int frame;
 long time, timebase;
 char s[60];
 char currentMode[80];
+
+/*char gameModeString[40] = "800x600";
+void init();*/
 
 void renderBitmapString(
 		float x,
@@ -457,6 +459,7 @@ void drawRumah_merah()
 void drawMatras()
 {
 
+
 //----------------------------------------------
 
 	glColor3f(1, 1, 1);
@@ -714,6 +717,199 @@ void drawBebek() {
 
 unsigned int LoadTextureFromBmpFile(char *filename);
 
+
+
+//-----------------------------------------------
+
+//Meja
+void Meja()
+{
+
+	// Draw kubus
+    glPushMatrix();
+	glColor4f(0.35f, 0.15f, 0.0f, 1.0f);     // kaki kanan depan
+    glTranslatef(1.0f, -2.0f, 3.0f);
+    glScaled(1.0, 3.0, 1.0);
+    glutSolidCube(0.5f);
+    glPopMatrix();
+
+    // Draw kubus
+    glPushMatrix();
+	glColor4f(0.35f, 0.15f, 0.0f, 1.0f); // kaki kanan belakang
+    glTranslatef(1.0f, -2.0f, 1.0f);
+    glScaled(1.0, 3.0, 1.0);
+    glutSolidCube(0.5f);
+    glPopMatrix();
+
+    // Draw kubus
+    glPushMatrix();
+	glColor4f(0.35f, 0.15f, 0.0f, 1.0f); // kaki kiri belakang
+    glTranslatef(-3.0f, -2.0f, 1.0f);
+    glScaled(1.0, 3.0, 1.0);
+    glutSolidCube(0.5f);
+    glPopMatrix();
+
+    // Draw kubus
+    glPushMatrix();
+	glColor4f(0.35f, 0.15f, 0.0f, 1.0f); // kaki kiri depan
+    glTranslatef(-3.0f, -2.0f, 3.0f);
+    glScaled(1.0, 3.0, 1.0);
+    glutSolidCube(0.5f);
+    glPopMatrix();
+
+    // Draw kubus
+    glPushMatrix();
+	glColor4f(0.35f, 0.15f, 0.0f, 1.0f); // alas meja
+    glTranslatef(-1.0f, -1.25f, 2.0f);
+    glScaled(9.0, 0.5 , 5.0);
+    glutSolidCube(0.5f);
+    glPopMatrix();
+}
+
+//Kayu Bakar
+void KayuBakar()
+{
+
+    //kayu
+    glPushMatrix();
+	glColor4f(0.35f, 0.15f, 0.0f, 1.0f); // kayu kanan bawah
+    glTranslatef(1.1f, -3.0f, -3.0f);
+    glScaled(0.5, 0.5 , 5.0);
+    glutSolidCube(0.5f);
+    glPopMatrix();
+
+    //kayu
+    glPushMatrix();
+	glColor4f(0.35f, 0.15f, 0.0f, 1.0f); // kayu kiri bawah
+    glTranslatef(-1.1f, -3.0f, -3.0f);
+    glScaled(0.5, 0.5 , 5.0);
+    glutSolidCube(0.5f);
+    glPopMatrix();
+
+    //kayu
+    glPushMatrix();
+	glColor4f(0.35f, 0.15f, 0.0f, 1.0f); // kayu depan bawah
+    glTranslatef(0.0f, -2.75f, -1.85f);
+    glScaled(5.0, 0.5 , 0.5);
+    glutSolidCube(0.5f);
+    glPopMatrix();
+
+    //kayu
+    glPushMatrix();
+	glColor4f(0.35f, 0.15f, 0.0f, 1.0f); // kayu belakang bawah
+    glTranslatef(0.0f, -2.75f, -4.1f);
+    glScaled(5.0, 0.5 , 0.5);
+    glutSolidCube(0.5f);
+    glPopMatrix();
+
+    //kayu
+    glPushMatrix();
+	glColor4f(0.35f, 0.15f, 0.0f, 1.0f); // kayu kanan bawah 1
+    glTranslatef(1.1f, -2.5f, -3.0f);
+    glScaled(0.5, 0.5 , 5.0);
+    glutSolidCube(0.5f);
+    glPopMatrix();
+
+    //kayu
+    glPushMatrix();
+	glColor4f(0.35f, 0.15f, 0.0f, 1.0f); // kayu kiri bawah 1
+    glTranslatef(-1.1f, -2.5f, -3.0f);
+    glScaled(0.5, 0.5 , 5.0);
+    glutSolidCube(0.5f);
+    glPopMatrix();
+
+    //kayu
+    glPushMatrix();
+	glColor4f(0.35f, 0.15f, 0.0f, 1.0f); // kayu depan bawah 1
+    glTranslatef(0.0f, -2.25f, -1.85f);
+    glScaled(5.0, 0.5 , 0.5);
+    glutSolidCube(0.5f);
+    glPopMatrix();
+
+    //kayu
+    glPushMatrix();
+	glColor4f(0.35f, 0.15f, 0.0f, 1.0f); // kayu belakang bawah 1
+    glTranslatef(0.0f, -2.25f, -4.1f);
+    glScaled(5.0, 0.5 , 0.5);
+    glutSolidCube(0.5f);
+    glPopMatrix();
+
+    //kayu
+    glPushMatrix();
+	glColor4f(0.35f, 0.15f, 0.0f, 1.0f); // kayu kanan bawah 2
+    glTranslatef(1.1f, -2.0f, -3.0f);
+    glScaled(0.5, 0.5 , 5.0);
+    glutSolidCube(0.5f);
+    glPopMatrix();
+
+    //kayu
+    glPushMatrix();
+	glColor4f(0.35f, 0.15f, 0.0f, 1.0f); // kayu kiri bawah 2
+    glTranslatef(-1.1f, -2.0f, -3.0f);
+    glScaled(0.5, 0.5 , 5.0);
+    glutSolidCube(0.5f);
+    glPopMatrix();
+
+    //kayu
+    glPushMatrix();
+	glColor4f(0.35f, 0.15f, 0.0f, 1.0f); // kayu depan bawah 2
+    glTranslatef(0.0f, -1.75f, -1.85f);
+    glScaled(5.0, 0.5 , 0.5);
+    glutSolidCube(0.5f);
+    glPopMatrix();
+
+    //kayu
+    glPushMatrix();
+	glColor4f(0.35f, 0.15f, 0.0f, 1.0f); // kayu belakang bawah 2
+    glTranslatef(0.0f, -1.75f, -4.1f);
+    glScaled(5.0, 0.5 , 0.5);
+    glutSolidCube(0.5f);
+    glPopMatrix();
+
+    //kayu
+    glPushMatrix();
+	glColor4f(0.35f, 0.15f, 0.0f, 1.0f); // kayu kanan bawah 3
+    glTranslatef(1.1f, -1.5f, -3.0f);
+    glScaled(0.5, 0.5 , 5.0);
+    glutSolidCube(0.5f);
+    glPopMatrix();
+
+    //kayu
+    glPushMatrix();
+	glColor4f(0.35f, 0.15f, 0.0f, 1.0f); // kayu kiri bawah 3
+    glTranslatef(-1.1f, -1.5f, -3.0f);
+    glScaled(0.5, 0.5 , 5.0);
+    glutSolidCube(0.5f);
+    glPopMatrix();
+
+    //kayu
+    glPushMatrix();
+	glColor4f(0.35f, 0.15f, 0.0f, 1.0f); // kayu depan bawah 3
+    glTranslatef(0.0f, -1.25f, -1.85f);
+    glScaled(5.0, 0.5 , 0.5);
+    glutSolidCube(0.5f);
+    glPopMatrix();
+
+    //kayu
+    glPushMatrix();
+	glColor4f(0.35f, 0.15f, 0.0f, 1.0f); // kayu belakang bawah 3
+    glTranslatef(0.0f, -1.25f, -4.1f);
+    glScaled(5.0, 0.5 , 0.5);
+    glutSolidCube(0.5f);
+    glPopMatrix();
+}
+
+void Bintang()
+{
+    glPushMatrix();
+    glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+    glTranslatef(0.0f, -1.25f, -4.1f);
+    glScaled(0.5, 0.5, 0.5);
+    glutSolidSphere(1.0f, 100, 10);
+    glPopMatrix();
+}
+
+
 void computePos(float deltaMove) {
 
 	/*x += deltaMove * lx * 0.01f;
@@ -735,6 +931,10 @@ void display(void) {
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	//gluLookAt(viewx-80, viewy, viewz-80, 0.0, 0.0, 5.0, 0.0, 1.0, 0.0);
+
+    /*gluLookAt(	x, home, z,
+			x+lx, 14.5f,  z+lz,
+			0.0f, 54.0f,  0.0f);*/
 
     gluLookAt(	x, home, z,
 			x+lx, 15.0f,  z+lz,
@@ -870,10 +1070,82 @@ void display(void) {
 	drawBebek();
 	glPopMatrix();
 
+	//meja 1
+    glPushMatrix();
+    glTranslatef(65, 3, -230);
+    glScalef(2.5f, 2.5f, 2.5f);
+    Meja();
+    glPopMatrix();
+
+    //meja 2
+    glPushMatrix();
+    glTranslatef(125, 3, -230);
+    glScalef(2.5f, 2.5f, 2.5f);
+    Meja();
+    glPopMatrix();
+
+    //meja 3
+    glPushMatrix();
+    glTranslatef(185, 3, -230);
+    glScalef(2.5f, 2.5f, 2.5f);
+    Meja();
+    glPopMatrix();
+
+    //meja 4
+    glPushMatrix();
+    glTranslatef(245, 3, -230);
+    glScalef(2.5f, 2.5f, 2.5f);
+    Meja();
+    glPopMatrix();
+
+    //kayubakar 1
+    glPushMatrix();
+    glTranslatef(63, 0, -240);
+    glScalef(1.0f, 1.0f, 1.0f);
+    KayuBakar();
+    glPopMatrix();
+
+    //kayubakar 2
+    glPushMatrix();
+    glTranslatef(123, 0, -240);
+    glScalef(1.0f, 1.0f, 1.0f);
+    KayuBakar();
+    glPopMatrix();
+
+    //kayubakar 3
+    glPushMatrix();
+    glTranslatef(183, 0, -240);
+    glScalef(1.0f, 1.0f, 1.0f);
+    KayuBakar();
+    glPopMatrix();
+
+    //kayubakar 4
+    glPushMatrix();
+    glTranslatef(243, 0, -240);
+    glScalef(1.0f, 1.0f, 1.0f);
+    KayuBakar();
+    glPopMatrix();
+
+    //bintang
+    for (int i = -10; i < 10; i++)
+        for (int j = -10; j < 10; j++)
+        {
+            glPushMatrix();
+            glTranslatef(i*280, 200, j*-250);
+            glScalef(3.5f, 3.5f, 3.5f);
+            Bintang();
+            glPopMatrix();
+        }
+
+
+	//-----------------------------------------------
+
+    //Sleep(5);
 	glutSwapBuffers();
 }
 
 void reshape(int w, int h) {
+
 
 	float ratio;
     ratio = 1.0f * w / h;
@@ -978,7 +1250,10 @@ void mouseButton(int button, int state, int x, int y) {
 
 void animate()
 {
-     //==============================
+
+
+    //moving bebek 1&2
+    //==============================
     if(mv_c==1)
     {
         mv+=1;
@@ -1050,6 +1325,8 @@ void animate()
 	glutPostRedisplay();
 }
 
+
+
 void init() {
 
 	// register callbacks
@@ -1063,6 +1340,9 @@ void init() {
 	glutMouseFunc(mouseButton);
 	glutMotionFunc(mouseMove);
 
+	// OpenGL init
+	/*glEnable(GL_DEPTH_TEST);
+	glEnable(GL_CULL_FACE);*/
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
@@ -1091,6 +1371,8 @@ int main(int argc, char **argv) {
 	glLightfv(GL_LIGHT0, GL_SPECULAR, light_specular);
 	glLightfv(GL_LIGHT0, GL_POSITION, light_position);
 
+	//glMaterialfv(GL_FRONT, GL_SPECULAR, mat_specular);
+	//glMaterialfv(GL_FRONT, GL_SHININESS, high_shininess);
 	glColorMaterial(GL_FRONT, GL_DIFFUSE);
 
 	glutMainLoop();
