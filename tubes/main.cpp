@@ -769,7 +769,6 @@ void Meja()
 //Kayu Bakar
 void KayuBakar()
 {
-
     //kayu
     glPushMatrix();
 	glColor4f(0.35f, 0.15f, 0.0f, 1.0f); // kayu kanan bawah
