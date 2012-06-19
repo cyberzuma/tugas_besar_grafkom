@@ -21,10 +21,11 @@ float angles = 0.0f;
 float deltaAngle = 0.0f;
 float deltaMove = 0;
 int xOrigin = -1;
+//float x=0.0f, z=15.0f;
 float x=0.0f, z=15.0f;
 float lx=0.0f,lz=-1.0f;
 float home=15.0f,end=15.0f;
-
+//float home=85.0f,end=15.0f;
 using namespace std;
 
 float lastx, lasty;
@@ -375,81 +376,6 @@ void drawRumah_hijau()
 	jendela();
 	glPopMatrix();
 
-	//atap
-	glPushMatrix();
-	glTranslatef(16.0f, 1.0f, 3.55f);
-	//glScalef(0.4,0.85,0.1);
-
-	glPopMatrix();
-
-   return;
-}
-
-void drawRumah_merah()
-{
-    //Wall
-    glPushMatrix();
-	glTranslatef(0.0f, 0.0f, -5.0f);
-	glColor3f(0.2, 1, 0.2);
-	glScalef(2.5,1,1);
-	glutSolidCube(20.0f);
-	glPopMatrix();
-
-	glPushMatrix();
-	//glRotatef(90, 1, 0, 0);
-	glTranslatef(-13.0f, 0.0f, 10.0f);
-	glScalef(1.2,1,0.5);
-	glutSolidCube(20.0f);
-	glPopMatrix();
-
-    //tutup loteng
-	glPushMatrix();
-	glTranslatef(-15.0f, 10.1f, -5.0f);
-	glColor3f(0, 0, 0);
-	glScalef(0.5,0.02,0.5);
-	glutSolidCube(20.0f);
-	glPopMatrix();
-
-	//Pintu
-	glPushMatrix();
-	glTranslatef(-5.0f, 4.0f, 15.0f);
-	glColor4f(0.35, 0.15, 0.2, 1.0);
-	glScalef(0.6,1,0.1);
-	glutSolidCube(10.0f);
-	glPopMatrix();
-
-	glPushMatrix();
-	glTranslatef(-7.0f, 4.0f, 15.8f);
-	glColor4f(0.35, 0.15, 0.2, 1.0);
-	glutSolidSphere(0.5f,50.0f,25.0f);
-	glPopMatrix();
-
-	//window
-	jendela();
-
-	glPushMatrix();
-	glTranslatef(28.0f, 1.0f, 3.55f);
-	glScalef(0.4,0.85,0.1);
-	jendela();
-	glPopMatrix();
-
-	glPushMatrix();
-	glTranslatef(22.0f, 1.0f, 3.55f);
-	glScalef(0.4,0.85,0.1);
-	jendela();
-	glPopMatrix();
-
-	glPushMatrix();
-	glTranslatef(16.0f, 1.0f, 3.55f);
-	glScalef(0.4,0.85,0.1);
-	jendela();
-	glPopMatrix();
-
-	//atap
-	glPushMatrix();
-	glTranslatef(16.0f, 1.0f, 3.55f);
-
-	glPopMatrix();
    return;
 }
 
@@ -458,11 +384,7 @@ void drawRumah_merah()
 //=================================================================
 void drawMatras()
 {
-
-
-//----------------------------------------------
-
-	glColor3f(1, 1, 1);
+  	glColor3f(1, 1, 1);
 	glPushMatrix();
 	//glBindTexture(GL_TEXTURE_2D, texture[5]);
 	glScalef(30, 1, 30);
@@ -484,7 +406,6 @@ void drawMatras()
 
    return;
 }
-
 
 //=================================================================
 // Drone Toy
@@ -717,10 +638,6 @@ void drawBebek() {
 
 unsigned int LoadTextureFromBmpFile(char *filename);
 
-
-
-//-----------------------------------------------
-
 //Meja
 void Meja()
 {
@@ -769,6 +686,7 @@ void Meja()
 //Kayu Bakar
 void KayuBakar()
 {
+
     //kayu
     glPushMatrix();
 	glColor4f(0.35f, 0.15f, 0.0f, 1.0f); // kayu kanan bawah
@@ -908,11 +826,227 @@ void Bintang()
     glPopMatrix();
 }
 
+void Kursi()
+{
+    // Draw kubus
+    glPushMatrix();
+	glColor4f(0.35f, 0.15f, 0.0f, 1.0f);     // kanan depan
+    glTranslatef(-1.0f, -2.0f, 3.0f);
+    glScaled(1.0, 3.0, 1.0);
+    glutSolidCube(0.5f);
+    glPopMatrix();
+
+    // Draw kubus
+    glPushMatrix();
+	glColor4f(0.35f, 0.15f, 0.0f, 1.0f); // kanan belakang
+    glTranslatef(-1.0f, -1.0f, 1.0f);
+    glScaled(1.0, 7.0, 1.0);
+    glutSolidCube(0.5f);
+    glPopMatrix();
+
+    // Draw kubus
+    glPushMatrix();
+	glColor4f(0.35f, 0.15f, 0.0f, 1.0f); // kiri belakang
+    glTranslatef(-3.0f, -1.0f, 1.0f);
+    glScaled(1.0, 7.0, 1.0);
+    glutSolidCube(0.5f);
+    glPopMatrix();
+
+    // Draw kubus
+    glPushMatrix();
+	glColor4f(0.35f,0.15f,0.0f,1.0f); // kiri depan
+    glTranslatef(-3.0f, -2.0f, 3.0f);
+    glScaled(1.0, 3.0, 1.0);
+    glutSolidCube(0.5f);
+    glPopMatrix();
+
+    // Draw kubus
+    glPushMatrix();
+	glColor4f(0.35f,0.15f,0.0f,1.0f); // alas
+    glTranslatef(-2.0f, -1.25f, 2.0f);
+    glScaled(5.0, 0.5 , 5.0);
+    glutSolidCube(0.5f);
+    glPopMatrix();
+
+    // Draw kubus
+    glPushMatrix();
+	glColor4f(0.35f,0.15f,0.0f,1.0f); // alas atas
+    glTranslatef(-2.0f, 0.24f, 1.25f);
+    glScaled(5.0, 2.0 , 0.25);
+    glutSolidCube(0.5f);
+    glPopMatrix();
+}
+
+void Tenda()
+{
+    // Draw Pyramid
+    glPushMatrix();
+    glColor4f(0.0f, 0.1f, 0.0f, 0.0f);
+
+	glBegin(GL_TRIANGLES);
+		glNormal3f(1,0,1);
+        // first triangle
+		glVertex3f(1,0,1); //
+		glNormal3f(0,2,0); //
+		glVertex3f(0,2,0); //
+		glNormal3f(-1,0,1); //
+		glVertex3f(-1,0,1); //
+		glNormal3f(-1,0,1);
+        // second triangle
+		glVertex3f(-1,0,1); //
+		glNormal3f(0,2,0); //
+		glVertex3f(0,2,0); //
+		glNormal3f(-1,0,-1); //
+		glVertex3f(-1,0,-1); //
+		glNormal3f(-1,0,-1);
+        // third triangle
+		glVertex3f(-1,0,-1); //
+		glNormal3f(0,2,0); //
+		glVertex3f(0,2,0); //
+		glNormal3f(1,0,-1); //
+		glVertex3f(1,0,-1); //
+		glNormal3f(1,0,-1);
+        // last triangle
+		glVertex3f(1,0,-1); //
+		glNormal3f(0,2,0); //
+		glVertex3f(0,2,0); //
+		glNormal3f(1,0,1); //
+		glVertex3f(1,0,1); //
+	glEnd();
+
+    // alas piramid
+    glColor4f(0.0f, 0.1f, 0.0f, 0.0f);
+	glBegin(GL_TRIANGLES);
+		glNormal3f(-1,0,1);
+		glVertex3f(-1,0,1);
+		glNormal3f(-1,0,-1);
+		glVertex3f(-1,0,-1);
+		glNormal3f(1,0,1);
+		glVertex3f(1,0,1);
+		glNormal3f(1,0,1);
+		glVertex3f(1,0,1);
+		glNormal3f(-1,0,-1);
+		glVertex3f(-1,0,-1);
+		glNormal3f(1,0,-1);
+		glVertex3f(1,0,-1);
+	glEnd();
+	glPopMatrix();
+}
+
+void PintuTenda()
+{
+    // Draw PintuTenda
+    glPushMatrix();
+    glColor4f(0.3f, 0.0f, 0.0f, 0.0f);
+
+	glBegin(GL_TRIANGLES);
+		glNormal3f(1,0,1);
+        // first triangle
+		glVertex3f(1,0,1); //
+		glNormal3f(0,2,0); //
+		glVertex3f(0,2,0); //
+		glNormal3f(-1,0,1); //
+		glVertex3f(-1,0,1); //
+		glNormal3f(-1,0,1);
+        // second triangle
+		glVertex3f(-1,0,1); //
+		glNormal3f(0,2,0); //
+		glVertex3f(0,2,0); //
+		glNormal3f(-1,0,-1); //
+		glVertex3f(-1,0,-1); //
+		glNormal3f(-1,0,-1);
+        // third triangle
+		glVertex3f(-1,0,-1); //
+		glNormal3f(0,2,0); //
+		glVertex3f(0,2,0); //
+		glNormal3f(1,0,-1); //
+		glVertex3f(1,0,-1); //
+		glNormal3f(1,0,-1);
+        // last triangle
+		glVertex3f(1,0,-1); //
+		glNormal3f(0,2,0); //
+		glVertex3f(0,2,0); //
+		glNormal3f(1,0,1); //
+		glVertex3f(1,0,1); //
+	glEnd();
+
+    // alas piramid
+    glColor4f(0.0f, 0.1f, 0.0f, 0.0f);
+	glBegin(GL_TRIANGLES);
+		glNormal3f(-1,0,1);
+		glVertex3f(-1,0,1);
+		glNormal3f(-1,0,-1);
+		glVertex3f(-1,0,-1);
+		glNormal3f(1,0,1);
+		glVertex3f(1,0,1);
+		glNormal3f(1,0,1);
+		glVertex3f(1,0,1);
+		glNormal3f(-1,0,-1);
+		glVertex3f(-1,0,-1);
+		glNormal3f(1,0,-1);
+		glVertex3f(1,0,-1);
+	glEnd();
+	glPopMatrix();
+}
+
+void AtapRumah()
+{
+    // Draw atap
+    glPushMatrix();
+    glColor4f(0.0f, 0.1f, 0.5f, 0.0f);
+
+	glBegin(GL_TRIANGLES);
+		glNormal3f(1,0,1);
+        // first triangle
+		glVertex3f(1,0,1); //
+		glNormal3f(0,2,0); //
+		glVertex3f(0,2,0); //
+		glNormal3f(-1,0,1); //
+		glVertex3f(-1,0,1); //
+		glNormal3f(-1,0,1);
+        // second triangle
+		glVertex3f(-1,0,1); //
+		glNormal3f(0,2,0); //
+		glVertex3f(0,2,0); //
+		glNormal3f(-1,0,-1); //
+		glVertex3f(-1,0,-1); //
+		glNormal3f(-1,0,-1);
+        // third triangle
+		glVertex3f(-1,0,-1); //
+		glNormal3f(0,2,0); //
+		glVertex3f(0,2,0); //
+		glNormal3f(1,0,-1); //
+		glVertex3f(1,0,-1); //
+		glNormal3f(1,0,-1);
+        // last triangle
+		glVertex3f(1,0,-1); //
+		glNormal3f(0,2,0); //
+		glVertex3f(0,2,0); //
+		glNormal3f(1,0,1); //
+		glVertex3f(1,0,1); //
+	glEnd();
+
+    // alas piramid
+    glColor4f(0.0f, 0.1f, 0.5f, 0.0f);
+	glBegin(GL_TRIANGLES);
+		glNormal3f(-1,0,1);
+		glVertex3f(-1,0,1);
+		glNormal3f(-1,0,-1);
+		glVertex3f(-1,0,-1);
+		glNormal3f(1,0,1);
+		glVertex3f(1,0,1);
+		glNormal3f(1,0,1);
+		glVertex3f(1,0,1);
+		glNormal3f(-1,0,-1);
+		glVertex3f(-1,0,-1);
+		glNormal3f(1,0,-1);
+		glVertex3f(1,0,-1);
+	glEnd();
+	glPopMatrix();
+}
+
 
 void computePos(float deltaMove) {
-
-	/*x += deltaMove * lx * 0.01f;
-	z += deltaMove * lz * 0.01f;*/
 
 	x += deltaMove * lx * 0.25f;
 	z += deltaMove * lz * 0.25f;
@@ -925,23 +1059,14 @@ void display(void) {
 
 	glClearStencil(0); //clear the stencil buffer
 	glClearDepth(1.0f);
-	//glClearColor(0.0, 0.6, 0.8, 1); //warna langit
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT); //clear the buffers
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	//gluLookAt(viewx-80, viewy, viewz-80, 0.0, 0.0, 5.0, 0.0, 1.0, 0.0);
-
-    /*gluLookAt(	x, home, z,
-			x+lx, 14.5f,  z+lz,
-			0.0f, 54.0f,  0.0f);*/
-
-    gluLookAt(	x, home, z,
+	gluLookAt(	x, home, z,
 			x+lx, 15.0f,  z+lz,
 			0.0f, 1.0f,  0.0f);
 
-    //gluLookAt(view,camera,);
-
-	glPushMatrix();
+   	glPushMatrix();
 	drawSceneTanah(_terrain, 0.4f, 1.0f, 0.1f);
 	glPopMatrix();
 
@@ -1125,26 +1250,253 @@ void display(void) {
     KayuBakar();
     glPopMatrix();
 
-    //bintang
     for (int i = -10; i < 10; i++)
         for (int j = -10; j < 10; j++)
         {
             glPushMatrix();
-            glTranslatef(i*280, 200, j*-250);
+            glTranslatef(i*280, 200, j*200);
             glScalef(3.5f, 3.5f, 3.5f);
             Bintang();
             glPopMatrix();
         }
 
+    //kursi1
+    glPushMatrix();
+    glTranslatef(65, 0, -235);
+    glScalef(1.5f, 1.5f, 1.5f);
+    Kursi();
+    glPopMatrix();
 
-	//-----------------------------------------------
+    //kursi2
+    glPushMatrix();
+    glTranslatef(125, 0, -235);
+    glScalef(1.5f, 1.5f, 1.5f);
+    Kursi();
+    glPopMatrix();
 
-    //Sleep(5);
+    //kursi3
+    glPushMatrix();
+    glTranslatef(185, 0, -235);
+    glScalef(1.5f, 1.5f, 1.5f);
+    Kursi();
+    glPopMatrix();
+
+    //kursi4
+    glPushMatrix();
+    glTranslatef(245, 0, -235);
+    glScalef(1.5f, 1.5f, 1.5f);
+    Kursi();
+    glPopMatrix();
+
+    //kursi5
+    glPushMatrix();
+    glTranslatef(50, 0, -228);
+    glScalef(1.5f, 1.5f, 1.5f);
+    glRotatef(90.0f, 0.0f , 1.0f ,0.0f);
+    Kursi();
+    glPopMatrix();
+
+    //kursi6
+    glPushMatrix();
+    glTranslatef(110, 0, -228);
+    glScalef(1.5f, 1.5f, 1.5f);
+    glRotatef(90.0f, 0.0f , 1.0f ,0.0f);
+    Kursi();
+    glPopMatrix();
+
+    //kursi7
+    glPushMatrix();
+    glTranslatef(170, 0, -228);
+    glScalef(1.5f, 1.5f, 1.5f);
+    glRotatef(90.0f, 0.0f , 1.0f ,0.0f);
+    Kursi();
+    glPopMatrix();
+
+    //kursi8
+    glPushMatrix();
+    glTranslatef(230, 0, -228);
+    glScalef(1.5f, 1.5f, 1.5f);
+    glRotatef(90.0f, 0.0f , 1.0f ,0.0f);
+    Kursi();
+    glPopMatrix();
+
+    //kursi9
+    glPushMatrix();
+    glTranslatef(75, 0, -222);
+    glScalef(1.5f, 1.5f, 1.5f);
+    glRotatef(-90.0f, 0.0f , 1.0f ,0.0f);
+    Kursi();
+    glPopMatrix();
+
+    //kursi10
+    glPushMatrix();
+    glTranslatef(135, 0, -222);
+    glScalef(1.5f, 1.5f, 1.5f);
+    glRotatef(-90.0f, 0.0f , 1.0f ,0.0f);
+    Kursi();
+    glPopMatrix();
+
+    //kursi11
+    glPushMatrix();
+    glTranslatef(195, 0, -222);
+    glScalef(1.5f, 1.5f, 1.5f);
+    glRotatef(-90.0f, 0.0f , 1.0f ,0.0f);
+    Kursi();
+    glPopMatrix();
+
+    //kursi12
+    glPushMatrix();
+    glTranslatef(255, 0, -222);
+    glScalef(1.5f, 1.5f, 1.5f);
+    glRotatef(-90.0f, 0.0f , 1.0f ,0.0f);
+    Kursi();
+    glPopMatrix();
+
+    //kursi13
+    glPushMatrix();
+    glTranslatef(59, 0, -215);
+    glScalef(1.5f, 1.5f, 1.5f);
+    glRotatef(180.0f, 0.0f , 1.0f ,0.0f);
+    Kursi();
+    glPopMatrix();
+
+    //kursi14
+    glPushMatrix();
+    glTranslatef(119, 0, -215);
+    glScalef(1.5f, 1.5f, 1.5f);
+    glRotatef(180.0f, 0.0f , 1.0f ,0.0f);
+    Kursi();
+    glPopMatrix();
+
+    //kursi15
+    glPushMatrix();
+    glTranslatef(179, 0, -215);
+    glScalef(1.5f, 1.5f, 1.5f);
+    glRotatef(180.0f, 0.0f , 1.0f ,0.0f);
+    Kursi();
+    glPopMatrix();
+
+    //kursi16
+    glPushMatrix();
+    glTranslatef(239, 0, -215);
+    glScalef(1.5f, 1.5f, 1.5f);
+    glRotatef(180.0f, 0.0f , 1.0f ,0.0f);
+    Kursi();
+    glPopMatrix();
+
+//======Tenda======
+
+    //tenda
+    glPushMatrix();
+    glTranslatef(50, -3, -250);
+    glScalef(7.0f, 6.0f, 7.0f);
+    Tenda();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(50, -3, -249.5);
+    glScalef(1.0f, 5.5f, 6.7f);
+    PintuTenda();
+    glPopMatrix();
+
+    //tenda2
+    glPushMatrix();
+    glTranslatef(110, -3, -250);
+    glScalef(7.0f, 6.0f, 7.0f);
+    Tenda();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(110, -3, -249.5);
+    glScalef(1.0f, 5.5f, 6.7f);
+    PintuTenda();
+    glPopMatrix();
+
+    //tenda3
+    glPushMatrix();
+    glTranslatef(170, -3, -250);
+    glScalef(7.0f, 6.0f, 7.0f);
+    Tenda();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(170, -3, -249.5);
+    glScalef(1.0f, 5.5f, 6.7f);
+    PintuTenda();
+    glPopMatrix();
+
+    //tenda2
+    glPushMatrix();
+    glTranslatef(230, -3, -250);
+    glScalef(7.0f, 6.0f, 7.0f);
+    Tenda();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(230, -3, -249.5);
+    glScalef(1.0f, 5.5f, 6.7f);
+    PintuTenda();
+    glPopMatrix();
+
+//======Atap Rumah======
+
+    //atap1
+    glPushMatrix();
+    glTranslatef(73, 10, -185);
+    glScalef(14.0f, 5.0f, 11.0f);
+    AtapRumah();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(47, 10, -170);
+    glScalef(13.0f, 4.0f, 5.0f);
+    AtapRumah();
+    glPopMatrix();
+
+    //atap2
+    glPushMatrix();
+    glTranslatef(133, 10, -185);
+    glScalef(14.0f, 5.0f, 11.0f);
+    AtapRumah();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(107, 10, -170);
+    glScalef(13.0f, 4.0f, 5.0f);
+    AtapRumah();
+    glPopMatrix();
+
+    //atap3
+    glPushMatrix();
+    glTranslatef(193, 10, -185);
+    glScalef(14.0f, 5.0f, 11.0f);
+    AtapRumah();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(167, 10, -170);
+    glScalef(13.0f, 4.0f, 5.0f);
+    AtapRumah();
+    glPopMatrix();
+
+    //atap4
+    glPushMatrix();
+    glTranslatef(253, 10, -185);
+    glScalef(14.0f, 5.0f, 11.0f);
+    AtapRumah();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(227, 10, -170);
+    glScalef(13.0f, 4.0f, 5.0f);
+    AtapRumah();
+    glPopMatrix();
+
 	glutSwapBuffers();
+
 }
 
 void reshape(int w, int h) {
-
 
 	float ratio;
     ratio = 1.0f * w / h;
@@ -1192,8 +1544,7 @@ void pressKey(int key, int xx, int yy) {
 		case GLUT_KEY_END : home -= 10.0f; break;
 		case GLUT_KEY_PAGE_UP : home += 0.5f; break;
 		case GLUT_KEY_PAGE_DOWN : home -= 0.5f; break;
-
-	}
+		}
 	if (glutGameModeGet(GLUT_GAME_MODE_ACTIVE) == 0)
 		sprintf(currentMode,"Current Mode: Window");
 	else
@@ -1249,8 +1600,6 @@ void mouseButton(int button, int state, int x, int y) {
 
 void animate()
 {
-
-
     //moving bebek 1&2
     //==============================
     if(mv_c==1)
@@ -1323,8 +1672,6 @@ void animate()
 	// Calling glutPostRedisplay() forces a redraw with the new angle
 	glutPostRedisplay();
 }
-
-
 
 void init() {
 
