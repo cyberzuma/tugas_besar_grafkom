@@ -332,6 +332,14 @@ void drawRumah_hijau()
 	glutSolidCube(20.0f);
 	glPopMatrix();
 
+    //cerobong asap
+	glPushMatrix();
+	glTranslatef(-15.0f, 10.1f, -5.0f);
+	glColor3f(0, 0, 0);
+	glScalef(0.2,1.0,0.2);
+	glutSolidCube(20.0f);
+	glPopMatrix();
+
 	//Pintu
 	glPushMatrix();
 	glTranslatef(-5.0f, 2.0f, 15.0f);
@@ -365,6 +373,22 @@ void drawRumah_hijau()
 	glTranslatef(16.0f, 1.0f, 3.55f);
 	glScalef(0.4,0.85,0.1);
 	jendela();
+	glPopMatrix();
+
+   return;
+}
+
+//=================================================================
+// Matras
+//=================================================================
+void drawMatras()
+{
+    glColor3f(0.9, 0.9, 0.9);
+	glPushMatrix();
+	glTranslatef(-1.2, 0.0, -0.5);
+	glScalef(1.2, 0.05, 2);
+	glRotatef(90, 1, 0, 0);
+    glutSolidCube(7.0f);
 	glPopMatrix();
 
    return;
@@ -1292,6 +1316,8 @@ void pohon3()
 	glutSolidOctahedron();
 	glPopMatrix();
 
+
+
 	// Draw batang
 	glPushMatrix();
 	glColor3f(0.8f, 0.4f, 0.1f);     // coklat
@@ -1320,6 +1346,24 @@ void pohon4()
     glutSolidCube(0.5f);
     glPopMatrix();
 }
+
+void drawBarang()
+{
+    //teko
+    glPushMatrix();
+    glTranslatef(63, 0, -240);
+    glScalef(0.2, 0.2, 0.2);
+
+    glPopMatrix();
+
+    //buku
+    glPushMatrix();
+    drawMatras();
+    glPopMatrix();
+}
+
+
+
 
 void computePos(float deltaMove) {
 
@@ -1374,6 +1418,23 @@ void display(void) {
     glPushMatrix();
     glTranslatef(60.0,0.0,-180.0);
     drawRumah_hijau();
+    glPopMatrix();
+
+    //barang;
+    for(int i=1; i<=4; i++)
+    {
+        glPushMatrix();
+        glTranslatef(3+i*60, 0.5, -225);
+        glScalef(0.2, 0.2, 0.2);
+        drawBarang();
+        glPopMatrix();
+    }
+
+    //matras
+    glPushMatrix();
+    glTranslatef(33, -4.5, -220);
+    glScalef(2, 2, 2);
+    drawMatras();
     glPopMatrix();
 
     //fan

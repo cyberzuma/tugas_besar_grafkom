@@ -20,9 +20,9 @@
 			<Add option="-g" />
 		</Compiler>
 		<Linker>
-			<Add library="C:\Program Files\CodeBlocks\MinGW\lib\libopengl32.a" />
 			<Add library="C:\Program Files\CodeBlocks\MinGW\lib\libglu32.a" />
 			<Add library="C:\Program Files\CodeBlocks\MinGW\lib\libglut32.a" />
+			<Add library="C:\Program Files\CodeBlocks\MinGW\lib\libopengl32.a" />
 		</Linker>
 		<Unit filename="imageloader.cpp" />
 		<Unit filename="imageloader.h" />
