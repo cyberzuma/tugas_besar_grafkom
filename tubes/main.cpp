@@ -1292,8 +1292,6 @@ void pohon3()
 	glutSolidOctahedron();
 	glPopMatrix();
 
-
-
 	// Draw batang
 	glPushMatrix();
 	glColor3f(0.8f, 0.4f, 0.1f);     // coklat
