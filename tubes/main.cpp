@@ -1,9 +1,15 @@
+#pragma once
+
+#ifndef _WIN32_WINNT		// Allow use of features specific to Windows XP or later.
+#define _WIN32_WINNT 0x0501	// Change this to the appropriate value to target other versions of Windows.
+#endif
+
 #include <stdio.h>
 #include <tchar.h>
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
-
+#include <windows.h>
 #ifdef __APPLE__
 #include <OpenGL/OpenGL.h>
 #include <GLUT/glut.h>
@@ -2500,6 +2506,7 @@ void init() {
 	// register callbacks
 	glutDisplayFunc(display);
 	glutReshapeFunc(reshape);
+	glutIdleFunc(animate);
 
     glutIgnoreKeyRepeat(1);
 	glutKeyboardFunc(processNormalKeys);
